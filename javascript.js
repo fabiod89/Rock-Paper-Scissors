@@ -6,31 +6,17 @@ function playRound (playerSelection,computerSelection){
     if (playerSelection === computerSelection){
         alert("Tie");
     }
-    else if(playerSelection === "ROCK" && computerSelection === "SCISSORS"){
+    else if(playerSelection === "ROCK" && computerSelection === "SCISSORS" || 
+            playerSelection === "PAPER" && computerSelection === "ROCK" ||
+            playerSelection === "SCISSORS" && computerSelection === "PAPER"){
         playerScore++
         alert("You win")
     }
-    else if(playerSelection === "ROCK" && computerSelection === "PAPER"){
+    else if(playerSelection === "ROCK" && computerSelection === "PAPER" ||
+            playerSelection === "PAPER" && computerSelection === "SCISSORS" ||
+            playerSelection === "SCISSORS" && computerSelection === "ROCK"){
         computerScore++
         alert("You lose")
-    }
-
-    else if (playerSelection === "PAPER" && computerSelection === "ROCK"){
-        playerScore++
-        alert("You win");
-    }
-    else if(playerSelection === "PAPER" && computerSelection === "SCISSORS"){
-        computerScore++
-        alert("You lose")
-    }
-
-    else if (playerSelection === "SCISSORS" && computerSelection === "ROCK"){
-        computerScore++
-        alert("You lose");
-    }
-    else if(playerSelection === "SCISSORS" && computerSelection === "PAPER"){
-        playerScore++
-        alert("You win")
     }
 
 }
