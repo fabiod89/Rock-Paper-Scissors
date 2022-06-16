@@ -3,7 +3,7 @@ let computerScore = 0;
 
 // Play a round
 function playRound (playerSelection,computerSelection){
-    if (playerSelection === "ROCK" && computerSelection === "ROCK"){
+    if (playerSelection === computerSelection){
         alert("Tie");
     }
     else if(playerSelection === "ROCK" && computerSelection === "SCISSORS"){
@@ -23,16 +23,10 @@ function playRound (playerSelection,computerSelection){
         computerScore++
         alert("You lose")
     }
-    else if(playerSelection === "PAPER" && computerSelection === "PAPER"){
-        alert("Tie")
-    }
 
     else if (playerSelection === "SCISSORS" && computerSelection === "ROCK"){
         computerScore++
         alert("You lose");
-    }
-    else if(playerSelection === "SCISSORS" && computerSelection === "SCISSORS"){
-        alert("tie")
     }
     else if(playerSelection === "SCISSORS" && computerSelection === "PAPER"){
         playerScore++
