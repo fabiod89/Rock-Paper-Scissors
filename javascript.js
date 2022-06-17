@@ -18,27 +18,20 @@ function playRound (playerSelection,computerSelection){
         computerScore++
         alert("You lose")
     }
-
 }
 
 //Player choose
-let playerSelection = () => {
-    let choice = prompt("Choose Rock, Paper or Scissors").toUpperCase()
-    return (choice);
-}
-
-
-//Computer choice
+document.getElementsByName("rock")[0].addEventListener("click", () => {playRound("ROCK",computerSelection())})
+document.getElementsByName("paper")[0].addEventListener("click", () => {playRound("PAPER",computerSelection())})
+document.getElementsByName("scissors")[0].addEventListener("click", () => {playRound("SCISSORS",computerSelection())})
+//Computer choose
 let computerSelection = () => {
     let choices = ["ROCK","SCISSORS","PAPER"]
     return (choices[Math.floor(Math.random() * choices.length)]);
 }
 
-//Main game function
-function game() {
-    playRound(playerSelection(),computerSelection());
-}
 
 
-game()
+
+
 
