@@ -30,7 +30,6 @@ header img {
 
 /* Main */
 main{
-
     padding: 80px 30px;
     text-align: center;
     justify-content: center;
@@ -45,7 +44,7 @@ main li {
 
 main img {
     cursor: pointer;
-    width: 160px;
+    width: 100px;
     height: auto;
     transition: 0.2s;
     border-radius: 5em;
@@ -55,10 +54,20 @@ main img {
 
 main img:hover {
     opacity: .5;
-
-
-
-
-
 }
 
+.output {
+    display: flex;
+    text-align: center;
+    
+    padding: 60px 140px;
+}
+
+.output .flex {
+    flex: 1;
+}
+
+.output .flex img {
+    width: 100px;
+    height: auto;
+}
