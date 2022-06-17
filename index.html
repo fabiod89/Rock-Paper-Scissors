@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <Title>Rock - Paper - Scissors</Title>
     </head>
 
@@ -10,49 +10,29 @@
 
         <!-- Header -->
         <header>
-            <img src="rock-paper-scissors.png">
+            <img src="images/rock-paper-scissors.png">
         </header>
 
         <main>
             <ul>
                 <li>
-                    <img src="rock.png" name="rock">
+                    <img id="rock-selector" src="images/rock.png">
 
                 </li>
                 
                 <li>
-                    <img src="paper.png" name="paper">
+                    <img id="paper-selector" src="images/paper.png">
 
                 </li>
                 
                 <li>
-                    <img src="scissors.png" name="scissors">
+                    <img id="scissors-selector" src="images/scissors.png">
 
                 </li>
                 
             </ul>
 
         </main>
-
-        <div class="output">
-            <div class="flex">
-                <img name="playerChoice" src="question-mark.png" name="questionmark">
-                <h1>Player</h1>
-                <h1 name="playerScore">0</h1>
-            </div>
-            <div class="flex">
-                <h2 name="message"></h2>
-            </div>
-            <div class="flex">
-                <img name="computerChoice"src="question-mark.png" name="questionmark">
-                <h1>Computer</h1>
-                <h1 name="computerScore">0</h1>
-            </div>
-
-        </div>
-
-
-
 
         <script src="javascript.js"></script>
     </body>
