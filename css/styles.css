@@ -22,7 +22,7 @@
 
 #window .sprites {
     display: flex;
-    padding: 110px 0px;
+    padding: 100px 0px;
     justify-content: space-evenly;
 }
 
@@ -54,8 +54,9 @@
 }
 
 #menu .buttons-menu img {
-    width: 50px;
+    width: 80px;
     height: auto;
+    border-style: double;
 
 }
 
