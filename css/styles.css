@@ -1,0 +1,26 @@
+.header{
+    text-align: center;
+}
+
+.header h1:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* Remove styling from a tag */
+.header a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  /* Background */
+.battle-area {
+    background: url(../background.PNG) black;
+    background-repeat: repeat-x;
+
+}
+
+.battle-area h1 {
+    padding-top: 300px;
+    justify-content: center;
+}

@@ -14,9 +14,10 @@ body {
 }
 
 div {
-    background-color: white;
+    background-color:black;
+    color: white;
     border-style: solid;
-    border-width: .125em .125em;
+    border-width: 5px 5px;
     margin: 15px 15px;
     padding: 15px 15px;
     position: relative;
