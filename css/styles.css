@@ -36,6 +36,8 @@
     transform: scaleX(-1);
 }
 
+
+
 #window .message {
     text-align: center;
 }
@@ -54,5 +56,9 @@
 #menu .buttons-menu img {
     width: 50px;
     height: auto;
+
 }
 
+#menu a{
+    cursor: pointer;
+}
