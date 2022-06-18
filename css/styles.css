@@ -14,13 +14,28 @@
   }
 
   /* Background */
-.battle-area {
-    background: url(../background.PNG) black;
+.window {
+    background: url(../assets/background/background.PNG) black;
     background-repeat: repeat-x;
 
 }
 
-.battle-area h1 {
-    padding-top: 300px;
-    justify-content: center;
+.window .sprites {
+    display: flex;
+    padding: 150px 0px;
+    justify-content: space-evenly;
+}
+
+/* Change size of sprites */
+.window .sprites img {
+    width: 60px;
+    height: auto;
+}
+
+.window .sprites .player-sprite {
+    transform: scaleX(-1);
+}
+
+.window .message {
+    text-align: center;
 }
