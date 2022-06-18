@@ -1,41 +1,58 @@
-.header{
+#header{
     text-align: center;
 }
 
-.header h1:hover{
+#header h1:hover{
     cursor: pointer;
     opacity: 0.5;
 }
 
 /* Remove styling from a tag */
-.header a {
+#header a {
     color: inherit;
     text-decoration: inherit;
   }
 
   /* Background */
-.window {
+#window {
     background: url(../assets/background/background.PNG) black;
     background-repeat: repeat-x;
 
 }
 
-.window .sprites {
+#window .sprites {
     display: flex;
-    padding: 150px 0px;
+    padding: 110px 0px;
     justify-content: space-evenly;
 }
 
 /* Change size of sprites */
-.window .sprites img {
+#window .sprites img {
     width: 60px;
     height: auto;
 }
 
-.window .sprites .player-sprite {
+#window .sprites .player-sprite {
     transform: scaleX(-1);
 }
 
-.window .message {
+#window .message {
     text-align: center;
 }
+
+#menu {
+    display:flex;
+    padding: 30px 0px;
+    justify-content: space-around;
+
+}
+
+#menu .buttons-menu{
+    padding-top: 20px;
+}
+
+#menu .buttons-menu img {
+    width: 50px;
+    height: auto;
+}
+
