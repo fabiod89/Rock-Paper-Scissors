@@ -3,9 +3,9 @@ const paperButton = document.querySelector(".paper-button");
 const scissorsButton = document.querySelector(".scissors-button");
 
 let playerHealth = document.getElementById("player-health");
-let enemyHealth = document.getElementById("enemy-health");
+let computerHealth = document.getElementById("enemy-health");
 playerHealth.innerHTML = 5;
-enemyHealth.innerHTML = 5;
+computerHealth.innerHTML = 5;
 
 let buttonsDisabled = false;
 
@@ -18,21 +18,25 @@ function randomChoices() {
 function calculateRound(playerChoice,computerChoice){
     playerChoice = document.querySelector(playerChoice).name
     computerChoice = document.querySelector(computerChoice).name
-
     if (playerChoice === computerChoice){
-        alert("Tie")}
+        console.log("Tie")}
     else if (playerChoice === "rock" && computerChoice === "scissors" ||
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock"){
-        alert("win")}
+            playerHealth.innerHTML -= 1}
     else if (computerChoice === "rock" && playerChoice === "scissors" ||
         computerChoice === "scissors" && playerChoice === "paper" ||
         computerChoice === "paper" && playerChoice === "rock"){
-        alert("lose")}
+            computerHealth.innerHTML -= 1}
         
 
 }
 
+function resetButtons(playerChoice,computerChoice){
+    document.querySelector(playerChoice).querySelector("img").style.borderColor = "white";
+    document.querySelector(computerChoice).querySelector("img").style.borderColor = "white";
+
+}
 
 function buttonAnimation(playerChoice,computerChoice){
     document.querySelector(playerChoice).querySelector("img").style.borderColor = "green";
@@ -49,15 +53,15 @@ function playRound(playerChoice){
         let computerChoice = randomChoices()
         buttonAnimation(playerChoice,computerChoice)
         calculateRound(playerChoice,computerChoice);
-            
-    
+        resetButtons(playerChoice,computerChoice)
     
         buttonsDisabled = false;
     /* 
     
 
-    checkWinner();
+
     resetButtons(pChoice,cChoice)
+    checkWinner();
     buttonsDisabled = false;
 
     */
