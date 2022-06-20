@@ -20,8 +20,16 @@ function calculateRound(playerChoice,computerChoice){
     computerChoice = document.querySelector(computerChoice).name
 
     if (playerChoice === computerChoice){
-        alert("Tie")
-    }
+        alert("Tie")}
+    else if (playerChoice === "rock" && computerChoice === "scissors" ||
+        playerChoice === "scissors" && computerChoice === "paper" ||
+        playerChoice === "paper" && computerChoice === "rock"){
+        alert("win")}
+    else if (computerChoice === "rock" && playerChoice === "scissors" ||
+        computerChoice === "scissors" && playerChoice === "paper" ||
+        computerChoice === "paper" && playerChoice === "rock"){
+        alert("lose")}
+        
 
 }
 
