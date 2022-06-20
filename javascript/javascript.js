@@ -26,17 +26,18 @@ function calculateRound(playerChoice,computerChoice){
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock"){
             message.innerHTML = "Round won..."
-
+            playerAnimations()
             setTimeout( () => { computerHealth.innerHTML -= 1 },2000)
         }
     else if (computerChoice === "rock" && playerChoice === "scissors" ||
         computerChoice === "scissors" && playerChoice === "paper" ||
         computerChoice === "paper" && playerChoice === "rock"){
             message.innerHTML = "Round lost..."
-
+            playerAnimations()
             setTimeout( () => { playerHealth.innerHTML -= 1 },2000)
         }
     else{
+        playerAnimations()
         message.innerHTML = "Tie!"
     }
 }
@@ -89,7 +90,28 @@ scissorsButton.addEventListener("click", () => {if (buttonsDisabled === false){p
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
-let playerIdle = document.getElementById("playerIdle");
+
 let playerWalk = document.getElementById("playerWalk");
-let enemyIdle= document.getElementById("enemyIdle");
+
+
+const playerIdle = new Image();
+const enemyIdle = new Image();
+playerIdle.src = "assets/player/player-idle.gif"
+enemyIdle.src = "assets/enemy/enemy-idle.gif"
+
+const playerStart = 50
+const enemyStart = 200
+
+ctx.drawImage(playerIdle,playerStart,50)
+ctx.drawImage(enemyIdle,enemyStart,50)
+
+let x = playerStart
+
+
+function playerAnimations(){
+
+
+
+}
+
 
