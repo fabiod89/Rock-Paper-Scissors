@@ -1,92 +1,57 @@
+const rockButton = document.querySelector(".rock-button");
+const paperButton = document.querySelector(".paper-button");
+const scissorsButton = document.querySelector(".scissors-button");
 
-let playerHealth = 5
-let computerHealth = 5
+let playerHealth = document.getElementById("player-health");
+let enemyHealth = document.getElementById("enemy-health");
+playerHealth.innerHTML = 5;
+enemyHealth.innerHTML = 5;
 
-// Sprite variables
-let playerSprite = document.querySelector(".player-sprite")
-let playerSpriteIdle = "assets/player/player-idle.gif"
-let playerSpriteWalk = "assets/player/player-walk.gif"
+let buttonsDisabled = false;
 
-// Button assignment
-let rockButton = document.querySelector(".rock-button")
-let paperButton = document.querySelector(".paper-button")
-let scissorsButton = document.querySelector(".scissors-button")
-
-//Enemy Button assignment
-let enemyRockButton = document.querySelector(".enemy-rock-button")
-let enemyPaperButton = document.querySelector(".enemy-paper-button")
-let enemyScissorsButton = document.querySelector(".enemy-scissors-button")
-
-// Button listeners
-rockButton.addEventListener("click", () => {playerSelect(".rock-button")})
-paperButton.addEventListener("click", () => {playerSelect(".paper-button")})
-scissorsButton.addEventListener("click", () => {playerSelect(".scissors-button")})
-
-//Message
-let message = document.querySelector(".message")
-
-let computerSelect = () => {
-    let choices = [".enemy-rock-button",".enemy-paper-button",".enemy-scissors-button"]
+function randomChoices() {
+    const choices = [".enemy-rock-button",".enemy-paper-button",".enemy-scissors-button"];
     let choice = choices[Math.floor(Math.random()*choices.length)];
     return (choice)
 }
 
-function buttonAnimation(choice){
-    document.querySelector(choice).querySelector("img").style.borderColor = "green"
-}
-
-function enemyButtonAnimation(choice){
-    document.querySelector(choice).querySelector("img").style.borderColor = "red"
-}
-
 function calculateRound(playerChoice,computerChoice){
+    playerChoice = document.querySelector(playerChoice).name
+    computerChoice = document.querySelector(computerChoice).name
 
-    if (playerChoice === ".rock-button" && computerChoice === ".enemy-rock-button"){
-      return ("Tie")
-    }else if (playerChoice === ".rock-button" && computerChoice === ".enemy-scissors-button"){
-      return ("Player win")
-  }else if (playerChoice === ".rock-button" && computerChoice === ".enemy-paper-button"){
-    return ("Computer win")
-  }
-
-  else if (playerChoice === ".paper-button" && computerChoice === ".enemy-rock-button"){
-    return ("Player win")
-  }else if (playerChoice === ".paper-button" && computerChoice === ".enemy-scissors-button"){
-    return ("Computer win")
-}else if (playerChoice === ".paper-button" && computerChoice === ".enemy-paper-button"){
-  return ("Tie")
-}
-
-  else if (playerChoice === ".scissors-button" && computerChoice === ".enemy-rock-button"){
-    return ("Computer win")
-  }else if (playerChoice === ".scissors-button" && computerChoice === ".enemy-scissors-button"){
-    return ("Tie")
-  }else if (playerChoice === ".scissors-button" && computerChoice === ".enemy-paper-button"){
-    return ("Player win")
-  }
+    if (playerChoice === computerChoice){
+        alert("Tie")
+    }
 
 }
 
-function calculateHealth(whoWon){
-  if (whoWon === "Tie"){
-    message.innerHTML = "Tie!!!"
-  }
-  else if(whoWon === "Player win"){
-    message.innerHTML = "Player attacks!"
-  }
-  else if(whoWon === "Computer win"){
-    message.innerHTML = "Computer attacks!"
-  }
+
+function buttonAnimation(playerChoice,computerChoice){
+    document.querySelector(playerChoice).querySelector("img").style.borderColor = "green";
+    document.querySelector(computerChoice).querySelector("img").style.borderColor = "red";
 }
 
-function playerSelect(playerchoice){
-    buttonAnimation(playerchoice)
-    message.innerHTML = "Computer is choosing..."
-    setTimeout( () => {
-      let computerChoice = computerSelect();
-      enemyButtonAnimation(computerChoice);
-      let whoWon = calculateRound(playerchoice,computerChoice);calculateHealth(whoWon);
-    }, 2000);
+rockButton.addEventListener("click", () => {playRound(".rock-button")});
+paperButton.addEventListener("click", () => {playRound(".paper-button")});
+scissorsButton.addEventListener("click", () => {playRound(".scissors-button")});
 
+function playRound(playerChoice){
+    buttonsDisabled = true;
+    if (buttonsDisabled){
+        let computerChoice = randomChoices()
+        buttonAnimation(playerChoice,computerChoice)
+        calculateRound(playerChoice,computerChoice);
+            
+    
+    
+        buttonsDisabled = false;
+    /* 
+    
 
+    checkWinner();
+    resetButtons(pChoice,cChoice)
+    buttonsDisabled = false;
+
+    */
+    }
 }

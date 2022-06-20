@@ -68,3 +68,7 @@
 #menu a{
     cursor: pointer;
 }
+
+#menu .inline-view  h2{
+    display:inline-block;
+}

@@ -39,13 +39,18 @@
             <div class="player-menu">
                 <div class="status-menu">
                     <h2>Player</h2>
-                    <h2>HP: 5/5</h2>
+                    <div class="inline-view"> 
+                        <h2>HP:</h2>
+                        <h2 id="player-health"></h2>
+                        <h2>/5</h2>
+                    </div>
+                    
                     
                 </div>
                 <div class="buttons-menu">
-                    <a class="rock-button"><img src="assets/buttons/rock.png" alt=""></a>
-                    <a class="paper-button"><img src="assets/buttons/paper.png" alt=""></a>
-                    <a class="scissors-button"><img src="assets/buttons/scissors.png" alt=""></a>
+                    <a class="rock-button" name="rock"><img src="assets/buttons/rock.png"></a>
+                    <a class="paper-button" name="paper"><img src="assets/buttons/paper.png"></a>
+                    <a class="scissors-button" name="scissors"><img src="assets/buttons/scissors.png"></a>
                 </div>
             </div>
 
@@ -53,13 +58,17 @@
             <div class="enemy-menu">
                 <div class="status-menu">
                     <h2>Enemy</h2>
-                    <h2>HP: 5/5</h2>
+                    <div class="inline-view"> 
+                        <h2>HP:</h2>
+                        <h2 id="enemy-health"></h2>
+                        <h2>/5</h2>
+                    </div>
                     
                 </div>
                 <div class="buttons-menu">
-                    <a class="enemy-rock-button"><img src="assets/buttons/rock.png" alt=""></a>
-                    <a class="enemy-paper-button"><img src="assets/buttons/paper.png" alt=""></a>
-                    <a class="enemy-scissors-button"><img src="assets/buttons/scissors.png" alt=""></a>
+                    <a class="enemy-rock-button" name="rock"><img src="assets/buttons/rock.png"></a>
+                    <a class="enemy-paper-button" name="paper"><img src="assets/buttons/paper.png"></a>
+                    <a class="enemy-scissors-button" name="scissors"><img src="assets/buttons/scissors.png"></a>
                 </div>
             </div>
 
@@ -69,6 +78,7 @@
 
 
         <script type="text/javascript" src="javascript/javascript.js"></script>
+
     </body>
 
 
