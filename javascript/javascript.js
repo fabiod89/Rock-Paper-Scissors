@@ -26,18 +26,15 @@ function calculateRound(playerChoice,computerChoice){
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock"){
             message.innerHTML = "Round won..."
-            playerAnimations()
             setTimeout( () => { computerHealth.innerHTML -= 1 },2000)
         }
     else if (computerChoice === "rock" && playerChoice === "scissors" ||
         computerChoice === "scissors" && playerChoice === "paper" ||
         computerChoice === "paper" && playerChoice === "rock"){
             message.innerHTML = "Round lost..."
-            playerAnimations()
             setTimeout( () => { playerHealth.innerHTML -= 1 },2000)
         }
     else{
-        playerAnimations()
         message.innerHTML = "Tie!"
     }
 }
@@ -91,27 +88,43 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
 
-let playerWalk = document.getElementById("playerWalk");
 
 
-const playerIdle = new Image();
-const enemyIdle = new Image();
-playerIdle.src = "assets/player/player-idle.gif"
-enemyIdle.src = "assets/enemy/enemy-idle.gif"
+let playerWalk1= new Image();
+let playerWalk2= new Image();
 
-const playerStart = 50
-const enemyStart = 200
-
-ctx.drawImage(playerIdle,playerStart,50)
-ctx.drawImage(enemyIdle,enemyStart,50)
-
-let x = playerStart
-
-
-function playerAnimations(){
+playerWalk1.src = "assets/player/player-walk1.gif"
+playerWalk2.src = "assets/player/player-walk2.gif"
 
 
 
+function playerAnimation(){
+    setTimeout(function(){
+        requestAnimationFrame(playerAnimation)
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        ctx.drawImage(playerWalk1,100,50)
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        ctx.drawImage(playerWalk2,100,50)
+        console.log("Hey")
+    }, 1000/1)
+    
 }
+
+playerAnimation()
+
+
+// const playerIdle = new Image();
+// const enemyIdle = new Image();
+// playerIdle.src = "assets/player/player-idle.gif"
+// enemyIdle.src = "assets/enemy/enemy-idle.gif"
+
+// const playerStart = 50
+// const enemyStart = 200
+
+// ctx.drawImage(playerIdle,playerStart,50)
+// ctx.drawImage(enemyIdle,enemyStart,50)
+
+// let x = playerStart
+// let dx = 1
 
 
