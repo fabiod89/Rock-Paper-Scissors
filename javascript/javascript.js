@@ -26,6 +26,7 @@ function calculateRound(playerChoice,computerChoice){
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock"){
             message.innerHTML = "Round won..."
+            doAnim = true
             playerAnimation()
             setTimeout( () => { computerHealth.innerHTML -= 1 },2000)
         }
@@ -33,6 +34,7 @@ function calculateRound(playerChoice,computerChoice){
         computerChoice === "scissors" && playerChoice === "paper" ||
         computerChoice === "paper" && playerChoice === "rock"){
             message.innerHTML = "Round lost..."
+            doAnim = true
             playerAnimation()
             setTimeout( () => { playerHealth.innerHTML -= 1 },2000)
         }
