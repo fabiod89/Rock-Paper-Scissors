@@ -111,7 +111,7 @@ function playerAnimation(){
     if (doAnim === true){
         setTimeout(function(){
             
-            ctx.drawImage(playerAttack,0,frame,80,50,30,60,70,55);
+            ctx.drawImage(playerAttack,0,frame,120,50,30,60,100,55);
             requestAnimationFrame(playerAnimation)
             console.log("Hey")
             frame += 51
