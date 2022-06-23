@@ -35,7 +35,7 @@ function calculateRound(playerChoice,computerChoice){
         computerChoice === "paper" && playerChoice === "rock"){
             message.innerHTML = "Round lost..."
             doAnim = true
-            playerAnimation()
+            EnemyAnimation()
             setTimeout( () => { playerHealth.innerHTML -= 1 },2000)
         }
     else{
@@ -45,10 +45,16 @@ function calculateRound(playerChoice,computerChoice){
 
 function checkWinner(){
     if (playerHealth.innerHTML < 1){
+        
         game = false;
+        
+        //ctx.drawImage(playerDead,0,0,80,50,30,80,70,55);
         message.innerHTML = "You lose... Refresh to play again!"
     }else if (computerHealth.innerHTML < 1){
+        
         game = false;
+
+        //ctx.drawImage(playerDead,10,0,100,50,180,80,70,55);
         message.innerHTML = "You win... Refresh to play again!"
     }
 }
@@ -97,9 +103,14 @@ let ctx = canvas.getContext("2d");
 let playerAttack= new Image();
 let EnemyAttack= new Image();
 
+let playerDead= new Image();
+
 
 playerAttack.src = "assets/player/playerAnimation.png"
-EnemyAttack.src = "assets/enemy/BlackBelt.gif"
+playerDead.src = "assets/player/playerDead.gif"
+
+
+EnemyAttack.src = "assets/enemy/EnemyAnimation.png"
 
 
 playerAttack.onload = function() {
@@ -108,7 +119,7 @@ playerAttack.onload = function() {
 };
 
 EnemyAttack.onload = function() {
-    ctx.drawImage(EnemyAttack,0,0,80,50,220,60,70,55);
+    ctx.drawImage(EnemyAttack,10,0,100,50,180,60,70,55);
 };
 
 let doAnim = true
@@ -117,7 +128,6 @@ let frame = 0
 function playerAnimation(){
     if (doAnim === true){
         setTimeout(function(){
-            
             ctx.drawImage(playerAttack,0,frame,120,50,30,60,100,55);
             requestAnimationFrame(playerAnimation)
             console.log("Hey")
@@ -129,10 +139,29 @@ function playerAnimation(){
             }
         }, 1000/10)
     }
-    
 }
-//ctx.playerAttack(image,50,50,image.width,image.height,0,0,50,50);
+
+function EnemyAnimation(){
+    if (doAnim === true){
+        setTimeout(function(){
+            ctx.drawImage(EnemyAttack,10,frame,100,50,180,60,70,55);
+            requestAnimationFrame(EnemyAnimation)
+            console.log("Hey")
+            frame += 51
+            console.log(frame)
+            if (frame === 1020){
+                frame = 0
+                doAnim = false
+            }
+        }, 1000/10)
+    }
+}
 
 
 
 
+
+
+
+ctx.clearReact(100,100,180,80)
+ctx.drawImage(EnemyAttack,10,0,100,50,180,80,70,55);
