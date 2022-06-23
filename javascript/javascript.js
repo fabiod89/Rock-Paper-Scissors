@@ -93,15 +93,20 @@ let ctx = canvas.getContext("2d");
 
 
 let playerAttack= new Image();
+let EnemyAttack= new Image();
 
 
 playerAttack.src = "assets/player/playerAnimation.png"
-
+EnemyAttack.src = "assets/enemy/BlackBelt.gif"
 
 
 playerAttack.onload = function() {
     ctx.drawImage(playerAttack,0,0,80,50,30,60,70,55);
-    
+
+};
+
+EnemyAttack.onload = function() {
+    ctx.drawImage(EnemyAttack,0,0,80,50,220,60,70,55);
 };
 
 let doAnim = true
